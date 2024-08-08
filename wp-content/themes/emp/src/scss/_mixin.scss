@@ -1,0 +1,102 @@
+@use "sass:math";
+@mixin breakpoint($point) {
+    $xs: "(min-width: 480px)";
+    $sm: "(min-width: 768px)";
+    $md: "(min-width: 992px)";
+    $lg: "(min-width: 1200px)";
+    $xl: "(min-width: 1300px)";
+    $xxl: "(min-width: 1600px)";
+    $xxxl: "(min-width: 1800px)";
+  
+  
+    // mobile first approach variables
+    @if $point==xs {
+      @media #{$xs} {
+        @content;
+      }
+    }
+  
+    @if $point==sm {
+      @media #{$sm} {
+        @content;
+      }
+    } @else if $point==md {
+      @media #{$md} {
+        @content;
+      }
+    } @else if $point==lg {
+      @media #{$lg} {
+        @content;
+      }
+    } @else if $point==xl {
+      @media #{$xl} {
+        @content;
+      }
+    } @else if $point==xxl {
+      @media #{$xxl} {
+        @content;
+      }
+    } @else if $point==xxxl {
+      @media #{$xxxl} {
+        @content;
+      }
+    }
+  
+    // max width mixins
+    $maxXS: "(max-width: 479px)";
+    $maxSM: "(max-width: 767px)";
+  
+    @if $point==maxXS {
+      @media #{$maxXS} {
+        @content;
+      }
+    }
+  
+    @if $point==maxSM {
+      @media #{$maxSM} {
+        @content;
+      }
+    }
+  }
+
+  @mixin title {
+    .section-title {
+        margin-bottom: 50px;
+        h2 {
+            color: $primary-color-shade-dark;
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: 6px;
+            margin-bottom: 0;
+        }
+
+        h6 {
+            color: $secondary-color;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-family: $font-primary;
+            margin-bottom: 0px;
+            -webkit-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+        }
+        &.reversed{
+          h2{
+            color: white;
+          }
+        }
+    }
+}
+
+
+
+@function calculateRem($size) {
+    $remSize: math.div($size, 16px);
+    @return $remSize;
+}
+
+@mixin fsz($size) {
+    $fontOutput: calculateRem($size);
+    font-size: $fontOutput + rem;
+}

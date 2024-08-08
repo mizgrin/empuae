@@ -1,0 +1,76 @@
+.search-modal{
+    .modal-dialog{
+        margin-top: 40px;
+        max-width: 700px;
+        padding-top: 50px;
+        background-color: transparent;
+        .modal-content{
+            .modal-body{
+                padding: 0;
+                .btn-close{
+                    position: absolute;
+                    right: -25px;
+                    top: -25px;
+                    background-color: white;
+                    border-radius: 100%;
+                    padding: 10px;
+                }
+                form{
+                    .form-group{
+                        display: flex;
+                        input{
+                            height: 30px;
+                            margin-bottom: 0;
+                            flex: 4;
+                        }
+                        .btn--search{
+                            
+                            width: 40px;
+                            height: auto;
+                            min-width: fit-content;
+                            
+                        }
+                        
+                       
+                    }
+                }
+            }
+        }
+    }
+}
+.modal-backdrop.show{
+    opacity: 1!important;
+}
+
+.btn--text-icon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-form--innerpage{
+	display: block;
+	width: 100%;
+	margin: 20px auto 40px;
+	.form-group{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		input{
+			flex-shrink: 0;
+			margin-bottom: 0;
+		}
+		.btn--search{
+			display: block;
+			position:absolute;
+			right: 0;
+			min-width: 40px;
+			&.btn--text-icon{
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+.search-modal .modal-dialog {
+  margin-top: 40px;
+  max-width: 700px;
+  padding-top: 50px;
+  background-color: transparent;
+}
+.search-modal .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+.search-modal .modal-dialog .modal-content .modal-body .btn-close {
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  background-color: white;
+  border-radius: 100%;
+  padding: 10px;
+}
+.search-modal .modal-dialog .modal-content .modal-body form .form-group {
+  display: flex;
+}
+.search-modal .modal-dialog .modal-content .modal-body form .form-group input {
+  height: 30px;
+  margin-bottom: 0;
+  flex: 4;
+}
+.search-modal .modal-dialog .modal-content .modal-body form .form-group .btn--search {
+  width: 40px;
+  height: auto;
+  min-width: fit-content;
+}
+
+.modal-backdrop.show {
+  opacity: 1 !important;
+}

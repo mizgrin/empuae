@@ -1,0 +1,147 @@
+
+footer{
+    
+    background-color:#242424;
+    padding-bottom: 0;
+    padding-top: 60px;
+    position: relative;
+    .footer-widgets{
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: radial-gradient(circle, transparent 0%, #242424 100%);
+        }
+        .footer-widget-single{
+            h4{
+                color: white;
+                
+            }
+            .footer-contact{
+                ul{
+                    columns: 1;
+                    li{
+                        color: white;
+                        padding-bottom: 10px;
+                        font-size: 12px;
+                        i{
+                            padding-right: 15px;
+                        }
+                        a{
+                            color: white;
+                        }
+                    }
+                }
+            }
+         
+        }
+        .footer-menu{
+            
+            padding-bottom: 20px;
+            h4{
+                color:white;
+                display: inline-block;
+                position: relative;
+                margin-bottom: 5px;
+                padding: 5px;
+           
+            }
+            
+            ul{
+                list-style: none;
+                
+                li{
+                    display: block;
+                    padding-bottom: 10px;
+                    a{
+                        color:#fff;
+                        font-size:12px;
+                        
+                        display: block;
+                    }
+                }
+            }
+          
+           
+        }  
+        .social-menu{
+            
+            ul{
+                li{
+                    display: inline-block;
+                    padding: 5px;
+                    float: left;
+                    a{
+                        color: #fff;
+                        border: 1px solid #fff;
+                        line-height: 2.3;
+                        width: 35px;
+                        display: inline-block;
+                        height: 35px;
+                        transition: all 0.3s linear;
+                        text-align: center;
+                        &:hover{
+                           color: #fff;
+                           background-color: #357DED;
+                            border: 1px solid #357DED;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-desc{
+            .site-branding{
+                .emp__logo-holder{
+                    margin-bottom: 20px;
+                }
+            }
+            p{
+                color: white;
+            }
+            .logo{
+                width: 50%;
+            }
+        }
+    
+    }
+    // &::before{
+     
+    //     content: "";
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 180px;
+    //     width: 100%;
+    //     background-color:  #d3edda;
+    //     left: 0;
+    //     top: -30px;
+    //     z-index: -1;
+    //     transform: skewY(5deg);
+    // }
+    // &::after{
+     
+    //     content: "";
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 180px;
+    //     width: 100%;
+    //     background-color: #89a6d1;
+    //     left: 0;
+    //     top: -30px;
+    //     z-index: -1;
+    //     transform: skewY(-5deg);
+    // }
+        .copyright{
+            padding: 15px;
+            text-align:center;
+            p{
+                color: white;
+                margin-bottom: 0;
+            }
+        }
+      
+}

@@ -1,0 +1,116 @@
+.banner-section{
+    background: linear-gradient(240deg, rgb($primary-color,0.1), transparent);
+    .banner--wrap{
+        figure{
+            box-shadow: inset -5px -5px 10px 2px #ddd;
+            padding: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+               border-top: 5px solid #357ded;
+                border-radius: 10px;
+            }
+            img{
+                transform: translateX(100%);
+                transition: all 1s linear;
+                transition-delay: 400ms;
+            }
+            &.loaded{
+                img{
+                    transform: translate(0%);
+                }
+            }
+        }
+        .banner-wrap--content{
+           
+            h1{
+                font-weight:300;
+                font-size: 40px;
+                line-height: 1.4;
+                margin-bottom: 30px;
+                color: $entry-color;
+                @include breakpoint(sm){
+                    font-size: 68px;
+                }
+                span{
+                    color: $primary-color;
+                    padding-bottom: 5px;
+                    border-bottom: 2px solid $primary-color;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        width: 100%;
+                        height: 6px;
+                        background:radial-gradient(circle, transparent 0%, $primary-color 100%);
+                    }
+                }
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.page-banner{
+
+    .page-banner-content{
+        height: 40vh;
+        .banner-image{
+            position: relative;
+            margin:0;
+            max-height: 40vh;
+            height: 100%;
+            img{
+                aspect-ratio: 16/9;
+                object-fit: cover;
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background:linear-gradient(90deg, transparent 0%, $primary-color 100%);
+                opacity: 1;
+                z-index: 2;
+            }
+        }
+        .banner-content{
+            background-color: $primary-color;
+            height: 100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            z-index: 3;
+            @include breakpoint(md){
+                justify-content: start;
+            }
+            h1{
+                font-size: 60px;
+                padding-top: 20px;
+                margin-bottom: 20px;
+                font-weight: 600;
+                padding-bottom: 5px;
+                color: white;
+                @include breakpoint(md){
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+
+}

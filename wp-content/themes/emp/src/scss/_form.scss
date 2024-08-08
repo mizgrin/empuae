@@ -1,0 +1,93 @@
+input,
+select{
+    min-height: 40px;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+}
+
+.form-wrap--filter{
+    width: 70%;
+    margin: 0 auto;
+    .form-group{
+        margin-bottom: 15px;
+    }
+}
+.select2-container{
+    .select2-selection--single{
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #E7F0FA;
+        .select2-selection__arrow{
+            position: static;
+            b{
+                display: none;
+            }
+            &::after{
+                content: "\f107";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 20px;
+                top: 20px;
+                color: $primary-color;
+
+            }
+        }
+
+    }
+}
+
+.form-section{
+    .form-wrap{
+        max-width: 600px;
+        margin: 0 auto;
+        .btn{
+            float: right;
+        }
+        .form-group{
+            position: relative;
+            label{
+                position: absolute;
+                @include fsz(16px);
+                font-weight: 400;
+                top: 10px;
+                padding: 0px 15px;
+                color: rgb(#303A42,50%);
+                transition: all 0.3s linear;
+                z-index: -1;
+            }
+            p{
+                margin-bottom: 0;
+            }
+            input,
+            textarea{
+                border-radius:5px;
+                background-color: rgb(#242424,4%);
+                margin-bottom: 0;
+                padding: 10px 15px;
+                border: none;
+            }
+            textarea{
+                min-height: 200px;
+            }
+           
+            &.active{
+                input,textarea{
+                    background-color: white;
+                }
+                label{
+                    top: -13px;
+                    left: 20px;
+                    background-color: white;
+                    font-weight: 500;
+                    color: $primary-color;
+                    padding: 2px 5px;
+                    z-index: 2;
+                }
+             
+            }
+        }
+    }
+}
