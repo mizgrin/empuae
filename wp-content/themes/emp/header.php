@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(); ?></title>
+    <meta name="description" content="EMPTEAM is a leading job portal in the UAE where users can explore job opportunities and apply directly to their desired positions.">
+    <meta name="keywords" content="job portal, job search, UAE jobs, apply for jobs, EMPTEAM, career opportunities, job listings">
+    <meta name="author" content="EMPTEAM">
+    <meta property="og:title" content="EMPTEAM - Your Trusted Job Portal">
+    <meta property="og:description" content="Discover the latest job opportunities in the UAE and apply directly on EMPTEAM. Start your career journey with us.">
+    <meta property="og:url" content="https://www.empteam.ae">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.empteam.ae/og-image.jpg"> <!-- Replace with your actual image URL -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EMPTEAM - Your Trusted Job Portal">
+    <meta name="twitter:description" content="Explore job opportunities and apply directly on EMPTEAM, the UAE's leading job portal.">
+    <meta name="twitter:url" content="https://www.empteam.ae">
+    <meta name="twitter:image" content="https://www.empteam.ae/twitter-image.jpg"> <!-- Replace with your actual image URL -->
+    <link rel="canonical" href="https://www.empteam.ae">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">

@@ -169,9 +169,16 @@
 							background-color: white;
 							transition: all 0.3s linear;
 							z-index: -1;
+							display: none;
+							@include breakpoint(md){
+								display: block;
+							}
 						}
 						&:hover{
-							color: $primary-color;
+							color: rgb($primary-color, 50%);
+							@include breakpoint(md){
+								color: $primary-color;
+							}
 							&::after{
 								top: 0;
 							}

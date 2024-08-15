@@ -1,7 +1,6 @@
 
 
 // Your JavaScript code
-console.log('Hello, asdasdwqdw !');
 
 $(document).ready(function() {
     new WOW().init();
@@ -120,27 +119,30 @@ function getUrlParameters() {
     }
     return params;
 }
-
 var params = getUrlParameters();
 
-// Append the parameters to a new list element
-var $list = $('<ul class="query-parameters-list list-unstyled"></ul>');
-$.each(params, function(key, values) {
-    if (Array.isArray(values)) {
-        values.forEach(function(value) {
-            let keyName = value.replace('_', ' ');
-            let searchKey = keyName.split(' ').join(' ');
-            $list.append('<li>'+ searchKey + '</li>');
-            $('input[name="' + key + '[]"][value="' + value + '"]').prop('checked', true);
-        });
-    } else {
-        $list.append('<li>' + key + ': ' + values + '</li>');
-        $('input[name="' + key + '"][value="' + values + '"]').prop('checked', true);
-    }
-});
+// Check if params is not empty
+if (Object.keys(params).length > 0) {
+    // Append the parameters to a new list element
+    var $list = $('<ul class="query-parameters-list list-unstyled"></ul>');
+    $.each(params, function(key, values) {
+        if (Array.isArray(values)) {
+            values.forEach(function(value) {
+                let keyName = value.replace('_', ' ');
+                let searchKey = keyName.split(' ').join(' ');
+                $list.append('<li>'+ searchKey + '</li>');
+                $('input[name="' + key + '[]"][value="' + value + '"]').prop('checked', true);
+            });
+        } else {
+            $list.append('<li>' + key + ': ' + values + '</li>');
+            $('input[name="' + key + '"][value="' + values + '"]').prop('checked', true);
+        }
+    });
 
-// Insert the list after the .search-form--innerpage element
-$('.search-form--innerpage').after($list);
+    // Insert the list after the .search-form--innerpage element
+    $('.search-form--innerpage').after($list);
+}
+
 
 
 $('#filter-toggle-btn').on('click', function() {
@@ -286,5 +288,22 @@ $('.team-slider').slick({
       // instead of a settings object
     ]
   });
-      
+  $('#gridBtn').on('click', function() {
+    // Add active class to the grid button and remove from the row button
+    $(this).addClass('active');
+    $('#rowBtn').removeClass('active');
+    
+    // Remove the row-listed class from the jobs-wrap div
+    $('.jobs-wrap').removeClass('row-listed');
+});
+
+// Add click event handler for the row button
+$('#rowBtn').on('click', function() {
+    // Add active class to the row button and remove from the grid button
+    $(this).addClass('active');
+    $('#gridBtn').removeClass('active');
+    
+    // Add the row-listed class to the jobs-wrap div
+    $('.jobs-wrap').addClass('row-listed');
+});
 });

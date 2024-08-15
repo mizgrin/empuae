@@ -8,6 +8,7 @@ $job_provider_name = CFS()->get('jobs_company_name', $post_id);
 $job_salary_details = CFS()->get('salary', $post_id);
 $jobs_company_logo = CFS()->get('jobs_company_logo', $post_id);
 $job_location = get_the_terms($post_id, 'jobs_countries');
+$job_notes = CFS()->get('job_notes', $post_id);
 if ($job_location && !is_wp_error($job_location)) {
     foreach ($job_location as $term) {
         $job_country = $term->name; // Output the term name
@@ -41,9 +42,11 @@ if($job_expiration){
             <div class="job-detail-wrap__title-wrap">
                 <div class="job-title--top">
                     <div class="job-title-wrap-left">
+                        <?php if (!empty($jobs_company_logo)): ?>
                         <div class="logo-holder">
                             <img src="<?php echo esc_url($jobs_company_logo); ?>" alt="logo">
                         </div>
+                        <?php endif; ?>
                         <div class="job-title-wrapper">
                             <h1 class="job-title">
                                 <?php the_title(); ?>
@@ -186,6 +189,12 @@ if($job_expiration){
                             <?php endforeach;
                             endif;
                         ?>
+                        <?php if(!empty($job_notes)): ?>
+                            <div class="job--notes job-entry-content">
+                                <h4 class='mb-2'>Notes</h4>
+                                <em> " <?php echo wp_kses_post($job_notes); ?> "</em>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="col-lg-4">

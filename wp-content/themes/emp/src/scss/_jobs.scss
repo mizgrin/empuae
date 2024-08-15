@@ -4,11 +4,15 @@
     gap: 20px;
     @include breakpoint(sm){
         grid-template-columns: repeat(2, 1fr);
+        &.row-listed{
+            grid-template-columns: 1fr;
+        }
     }
     @include breakpoint(lg){
         grid-template-columns: repeat(3, 1fr);
     }
     .job-item{
+        transition: all 0.3s linear;
         padding: 20px;
         background:white;
         border-radius: 8px;
@@ -214,6 +218,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
             span{
                 background-color: #E7F6EA;
                 color: #0BA02C;

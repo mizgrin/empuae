@@ -798,13 +798,14 @@ img {
     /* padding-right: 56px; */
 	
     border-style: solid;
-	
+	display: inline-block;
     border-width: 2px;
     margin: 0px;
     padding: 12px 25px;
     text-decoration: none;
     white-space: normal;
     min-width: 176px;
+	width: auto;
     height: 48px;
     min-height: 0px;
 	width: auto;	

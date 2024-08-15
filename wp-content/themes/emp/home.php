@@ -8,7 +8,8 @@ get_header();
 <?php get_template_part('template-parts/icons-meta-block'); ?>
 <?php get_template_part('template-parts/filter-jobs'); ?>
 <?php get_template_part('template-parts/howempwork'); ?>
-<?php get_template_part('template-parts/job-listing'); ?>
+<?php //get_template_part('template-parts/job-listing'); ?>
+<?php get_template_part('template-parts/featured-jobs'); ?>
 <?php get_template_part('template-parts/about-section'); ?>
 <section class="form-section">
   <div class="container">
@@ -20,6 +21,40 @@ get_header();
     </div>
   </div>
 </section>
+<?php
+$args = array(
+    'posts_per_page' => 3,
+    'post_type'      => 'post'
+);
+$myposts = get_posts($args);
+?>
+
+<?php if (!empty($myposts)) : ?>
+<section class="blog-section blog-section--listing">
+    <div class="container">
+      <div class="section-title">
+        <h3>Our Latest blogs</h3>
+      </div>
+        <div class="blog-section__wrap">
+            <div class="row">
+                <?php foreach ($myposts as $post) : setup_postdata($post); ?>
+                    <?php get_template_part('template-parts/loops/loop-blog'); ?>
+                <?php endforeach; wp_reset_postdata(); ?>
+            </div>
+            <a href="<?php echo esc_url(home_url('/read-our-news/')); ?>" class="btn btn--primary btn--more btn--icon mx-auto my-4">
+            <span>
+              View all blogs
+            </span>
+            <div class="icon-holder">
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+         
+          </a>
+        </div>
+    </div>
+</section>
+
+<?php endif; ?>
 <section class="contact-meta-section wow animate__animated animate__fadeInUp">
   <div class="container">
       <div class="contact-meta__wrap">

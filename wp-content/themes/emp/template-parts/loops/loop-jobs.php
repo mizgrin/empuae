@@ -13,32 +13,33 @@ $job_title = get_the_title($jobs->ID);
 
 <div class="job-item">
     <a href="<?php echo get_permalink($jobs->ID); ?>" class="screen-link"></a>
-    <?php if (!empty($job_title)): ?>
-        <h4><?php echo $job_title; ?></h4>
-    <?php endif; ?>
-    
-    <div class="job-meta">
-        <?php if (!empty($job_types)): ?>
-            <div class="job-types">
-                <?php foreach ($job_types as $job_type): ?>
-                    <span><?php echo esc_html($job_type->name); ?></span>
-                <?php endforeach; ?>
-            </div>
+    <div class="job-title-top">
+        <?php if (!empty($job_title)): ?>
+            <h4><?php echo $job_title; ?></h4>
         <?php endif; ?>
-        <?php if (!empty($job_cats)): ?>
-            <div class="job-categories">
-                <?php foreach ($job_cats as $job_cat): ?>
-                    <span><?php echo esc_html($job_cat->name); ?></span> 
-                <?php endforeach; ?>
+    
+        <div class="job-meta">
+            <?php if (!empty($job_types)): ?>
+                <div class="job-types">
+                    <?php foreach ($job_types as $job_type): ?>
+                        <span><?php echo esc_html($job_type->name); ?></span>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($job_cats)): ?>
+                <div class="job-categories">
+                    <?php foreach ($job_cats as $job_cat): ?>
+                        <span><?php echo esc_html($job_cat->name); ?></span> 
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+        <?php if (!empty($salary)): ?>
+            <div class="job-meta__salary">
+                <span>Salary: <?php echo $salary; ?></span>
             </div>
         <?php endif; ?>
     </div>
-    <?php if (!empty($salary)): ?>
-        <div class="job-meta__salary">
-            <span>Salary: <?php echo $salary; ?></span>
-        </div>
-    <?php endif; ?>
-    
     <div class="job-details-bottom">
         <?php if (!empty($jobs_company_logo)): ?>
             <figure class="job-provider-logo">

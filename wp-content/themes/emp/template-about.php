@@ -72,5 +72,7 @@ get_template_part('template-parts/about-section');
         </div>
     </div>
 </section>
+<?php  get_template_part('template-parts/partners'); ?>
 <?php  get_template_part('template-parts/faq'); ?>
+
 <?php get_footer(); ?>
